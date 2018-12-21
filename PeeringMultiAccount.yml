@@ -1,0 +1,48 @@
+---
+- hosts: "localhost"
+  connection: "local"
+
+  tasks:
+  - name: "First VPC"
+    ec2_vpc:
+      state: present
+      cidr_block: 10.0.0.0/16
+      profile: 843555617105
+      resource_tags: { "Name":"First VPC" }
+      subnets:
+        - cidr: 10.0.1.0/24
+          az: eu-west-1a
+          resource_tags: {"Location":"SiteA"}
+        - cidr: 10.0.2.0/24
+          az: eu-west-1b
+          resource_tags: {"Location":"SiteB"}
+        - cidr: 10.0.3.0/24
+          az: eu-west-1c
+          resource_tags: {"Location":"SiteC"}
+      region: eu-west-1
+      wait: "yes" 
+    register: first_vpc
+
+  - debug: msg="" 
+
+  - name: "Second VPC"
+    ec2_vpc:
+      state: present
+      cidr_block: 10.1.0.0/16
+      profile: 664710917345
+      resource_tags: { "Name":"Second VPC" }
+      subnets:
+        - cidr: 10.1.1.0/24
+          az: eu-west-1a
+          resource_tags: {"Location":"SiteA"}
+        - cidr: 10.1.2.0/24
+          az: eu-west-1b
+          resource_tags: {"Location":"SiteB"}
+        - cidr: 10.1.3.0/24
+          az: eu-west-1c
+          resource_tags: {"Location":"SiteC"}
+      region: eu-west-1
+      wait: "yes" 
+    register: second_vpc
+
+  - debug: msg="" 
