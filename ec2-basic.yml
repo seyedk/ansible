@@ -8,7 +8,7 @@
     vars:
       instance_type: t2.micro
       security_group: ansible-webserver # Change the security group name here
-      image: ami-719fb712 # This is an AMI i created myself
+      image: ami-01e24be29428c15b2 # This is an AMI i created myself
       keypair: ocsd-chef # This is one of my keys that i already have in AWS
       region: us-west-2 # Change the Region
       count: 1
