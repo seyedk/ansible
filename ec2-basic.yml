@@ -72,3 +72,5 @@
         args:
           tags:
             Name: webserver
+            TowerManaged: Yes
+            tag-key: TowerManaged
