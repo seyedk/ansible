@@ -49,6 +49,4 @@
                       region={{ region }} 
                       keypair={{ keypair }}
                       count={{count}}
-                      instance_tags:
-                         TowerManaged: TowerManaged
         register: ec2
