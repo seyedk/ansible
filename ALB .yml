@@ -120,5 +120,8 @@
           SslPolicy: ELBSecurityPolicy-TLS-1-2-2017-01
           Certificates:
             - CertificateArn: "{{certArn}}"
+          DefaultActions:
+            - Type: forward
+              TargetGroupName: "{{ TargetGroup }}"
       state: present
 #      deletion_protection: yes
