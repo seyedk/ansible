@@ -98,7 +98,6 @@
       vpc_id: "{{vpcid}}"
       health_check_path: /healthcheck
       successful_response_codes: "200,250-260"
-      target_type: ip
       targets: "{{alb_target_group[0].targets}}"
       state: present
       wait_timeout: 200
