@@ -5,7 +5,7 @@
   - name: obtain ACM certificates
     aws_acm_facts:
       region: "{{ awsregion }}"
-      name: "{{certificateCN}}"
+      domain_name: "{{certificateCN}}"
     register: certs
 
   - debug:
