@@ -1,5 +1,4 @@
 - name: Create ALB
-  hosts: localhost
   connection: local
   tasks:
   - name: obtain ACM certificates
