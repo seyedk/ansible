@@ -1,5 +1,5 @@
 - name: Create ALB
-  hosts: "{{targetALBvar}}"
+  hosts: localhost
   connection: local
   tasks:
   - name: obtain ACM certificates
